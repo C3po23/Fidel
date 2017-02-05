@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle icon-left>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Client</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+    <ion-searchbar placeholder="filter by username" (ionInput)="getClient($event)"></ion-searchbar>
+    <ion-card *ngFor="let repo of foundClient" (swipe)="doAlert($event)" (click)="goToFidel($event,repo.ID)">
+        <ion-card-header>
+            {{ repo.ID }}
+        </ion-card-header>
+        <ion-card-content>
+            {{ repo.nom }} {{ repo.prenom }}
+        </ion-card-content>
+        <ion-item>
+            <button ion-button primary clear item-left>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>12 Likes</div>
+            </button>
+            <button ion-button primary clear item-left>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Comments</div>
+            </button>
+            <ion-note item-right>
+                11h ago
+            </ion-note>
+        </ion-item>
+        <ion-badge item-right>La mort ou le tchitchi !</ion-badge>
+    </ion-card>
+</ion-content>

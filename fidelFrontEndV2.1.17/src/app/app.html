@@ -1,0 +1,25 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Pages</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="goToHome($event)">
+                Home
+            </button>
+            <button ion-item (click)="goToFidel($event)">
+                Fidel
+            </button>
+            <button ion-item (click)="goToNewClient($event)">
+                Nouveau client
+            </button>
+            <button menuClose ion-item detail-none>Close Menu</button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
